@@ -14,7 +14,7 @@ WORKDIR /app
 RUN addgroup --system api && \
           adduser --system -G api api
 
-COPY apps/api/dist/apps/api api
+COPY dist/apps/api api
 RUN chown -R api:api .
 
 # You can remove this install step if you build with `--bundle` option.
