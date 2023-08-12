@@ -144,7 +144,7 @@ async function bootstrap() {
     const globalPrefix = 'api';
     app.setGlobalPrefix(globalPrefix);
     const port = process.env.PORT || 3000;
-    app.use('/api/user', (0, http_proxy_middleware_1.createProxyMiddleware)({
+    app.use('/api/users', (0, http_proxy_middleware_1.createProxyMiddleware)({
         target: 'http://users:3300',
         changeOrigin: true,
         secure: false,

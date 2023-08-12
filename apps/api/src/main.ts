@@ -16,7 +16,7 @@ async function bootstrap() {
   const port = process.env.PORT || 3000;
 
   app.use(
-    '/api/user',
+    '/api/users',
     createProxyMiddleware({
       target: 'http://users:3300',
       changeOrigin: true,
