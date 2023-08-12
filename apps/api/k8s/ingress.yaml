@@ -18,6 +18,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: api-users
+                name: users
                 port:
                   number: 80
