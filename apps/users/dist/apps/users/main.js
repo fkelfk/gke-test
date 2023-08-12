@@ -67,7 +67,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", void 0)
 ], AppController.prototype, "getData", null);
 exports.AppController = AppController = tslib_1.__decorate([
-    (0, common_1.Controller)(),
+    (0, common_1.Controller)('users'),
     tslib_1.__metadata("design:paramtypes", [typeof (_a = typeof app_service_1.AppService !== "undefined" && app_service_1.AppService) === "function" ? _a : Object])
 ], AppController);
 
@@ -83,7 +83,7 @@ const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 let AppService = exports.AppService = class AppService {
     getData() {
-        return ({ message: 'Hello API' });
+        return { message: 'Hello API' };
     }
 };
 exports.AppService = AppService = tslib_1.__decorate([
@@ -136,7 +136,7 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     const globalPrefix = 'api';
     app.setGlobalPrefix(globalPrefix);
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 3300;
     await app.listen(port);
     common_1.Logger.log(`🚀 Application is running on: http://localhost:${port}/${globalPrefix}`);
 }
