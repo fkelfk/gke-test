@@ -21,4 +21,4 @@ RUN chown -R api-users:api-users .
 # The bundled output will include external dependencies.
 RUN npm --prefix api-users --omit=dev -f install
 
-CMD [ "node", "users" ]
+CMD [ "node", "api-users" ]

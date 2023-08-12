@@ -83,7 +83,7 @@ const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 let AppService = exports.AppService = class AppService {
     getData() {
-        return { message: 'Hello API' };
+        return { message: 'Hello users API' };
     }
 };
 exports.AppService = AppService = tslib_1.__decorate([
