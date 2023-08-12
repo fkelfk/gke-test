@@ -4,19 +4,20 @@ metadata:
   name: ingress
 spec:
   rules:
-  - http:
-    paths:
-    - path: /api
-      pathType: Prefix
-      backend:
-        service:
-          name: app
-          port:
-            number: 80
-    - path: /users
-      pathType: Prefix
-      backend:
-        service:
-          name: users
-          port:
-            number: 80
+    - host:
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: app
+                port:
+                  number: 80
+          - path: /users
+            pathType: Prefix
+            backend:
+              service:
+                name: users
+                port:
+                  number: 80
