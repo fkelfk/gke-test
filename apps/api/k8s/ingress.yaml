@@ -3,21 +3,20 @@ kind: Ingress
 metadata:
   name: ingress
 spec:
-  ingressClassName: nginx
   rules:
-      http:
-        paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: app
-                port:
-                  number: 80
-          - path: /users
-            pathType: Prefix
-            backend:
-              service:
-                name: users
-                port:
-                  number: 80
+    - http:
+      paths:
+        - path: /api
+          pathType: Prefix
+          backend:
+            service:
+              name: app
+              port:
+                number: 80
+        - path: /users
+          pathType: Prefix
+          backend:
+            service:
+              name: users
+              port:
+                number: 80
