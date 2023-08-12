@@ -4,17 +4,17 @@ steps:
   entrypoint: 'bash'
   args: [
    '-c', 
-   'docker pull gcr.io/$PROJECT_ID/api:latest || exit 0'
+   'docker pull gcr.io/$PROJECT_ID/users:latest || exit 0'
   ]
 #step 2
 - name: gcr.io/cloud-builders/docker
   args: [
    'build', 
    '-t', 
-   'gcr.io/$PROJECT_ID/api:$TAG_NAME',
+   'gcr.io/$PROJECT_ID/users:$TAG_NAME',
    '-t', 
-   'gcr.io/$PROJECT_ID/api:latest',
-   './apps/api/'
+   'gcr.io/$PROJECT_ID/users:latest',
+   './apps/users/'
   ]
 
 steps:
@@ -24,7 +24,7 @@ images:
 - 'us-west2-docker.pkg.dev/contrarians/quickstart-docker-repo/quickstart-image:tag1'
 #step 3
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['apply', '-f', 'apps/api/k8s/']
+  args: ['apply', '-f', 'apps/users/k8s/']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=prod'
@@ -34,14 +34,14 @@ images:
    'set', 
    'image', 
    'deployment', 
-   'api', 
-   'api=gcr.io/$PROJECT_ID/api:$TAG_NAME'
+   'users', 
+   'users=gcr.io/$PROJECT_ID/users:$TAG_NAME'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=prod'
 # push images to Google Container Registry with tags
 images: [
-   'gcr.io/$PROJECT_ID/api:$TAG_NAME',
-   'gcr.io/$PROJECT_ID/api:latest'
+   'gcr.io/$PROJECT_ID/users:$TAG_NAME',
+   'gcr.io/$PROJECT_ID/users:latest'
   ]

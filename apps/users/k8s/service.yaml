@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: users
+spec:
+  selector:
+     run: users
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3300
+  type: LoadBalancer
