@@ -4,9 +4,11 @@ metadata:
   name: api
 spec:
   selector:
-     run: api
+    run: api
   ports:
   - protocol: TCP
     port: 80
     targetPort: 3000
   type: LoadBalancer
+status:
+  loadBalancer: {}
