@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: api
+  name: api_loadbalancer
 spec:
   selector:
     run: api
@@ -10,5 +10,17 @@ spec:
     port: 80
     targetPort: 3000
   type: LoadBalancer
-status:
-  loadBalancer: {}
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: api_cluster
+spec:
+  selector:
+    run: api
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
