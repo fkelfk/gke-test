@@ -2,20 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: api
+    run: users
   name: users
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: api
+      run: users
   template:
     metadata:
       labels:
-        run: api
+        run: users
     spec:
       containers:
       - image: gcr.io/contrarains/users:latest
         name: users
         ports:
         - containerPort: 3300
+          protocol: TCP

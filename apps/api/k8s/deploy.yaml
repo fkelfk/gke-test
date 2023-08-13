@@ -19,3 +19,4 @@ spec:
         name: api
         ports:
         - containerPort: 3000
+          protocol: TCP
