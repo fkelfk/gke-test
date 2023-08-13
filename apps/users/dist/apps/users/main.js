@@ -134,6 +134,11 @@ const core_1 = __webpack_require__(2);
 const app_module_1 = __webpack_require__(3);
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    const corsOptions = {
+        origin: 'http://api:3000',
+        credentials: true, // 인증 정보를 전달하기 위한 옵션
+    };
+    app.enableCors(corsOptions);
     const globalPrefix = 'api';
     app.setGlobalPrefix(globalPrefix);
     const port = process.env.PORT || 3300;
