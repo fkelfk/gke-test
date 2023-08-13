@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: api_loadbalancer
+  name: api-loadbalancer
 spec:
   selector:
     run: api
@@ -16,7 +16,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: api_cluster
+  name: api-cluster
 spec:
   selector:
     run: api
