@@ -18,7 +18,7 @@ async function bootstrap() {
   app.use(
     '/api/users',
     createProxyMiddleware({
-      target: 'http://users:3300',
+      target: 'http://34.173.26.217:3300',
       changeOrigin: true,
       secure: false,
     })
