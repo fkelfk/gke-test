@@ -144,10 +144,10 @@ async function bootstrap() {
     const globalPrefix = 'api';
     app.setGlobalPrefix(globalPrefix);
     const port = process.env.PORT || 3000;
+    const USERS_SERVICE_URL = "http://localhost:3300";
     app.use('/api/users', (0, http_proxy_middleware_1.createProxyMiddleware)({
-        target: 'http://users:3300',
+        target: USERS_SERVICE_URL,
         changeOrigin: true,
-        secure: false,
     }));
     await app.listen(port);
     common_1.Logger.log(`🚀 Application is running on: http://localhost:${port}/${globalPrefix}`);
