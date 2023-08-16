@@ -10,6 +10,7 @@ steps:
 - name: gcr.io/cloud-builders/docker
   args: [
    'build', 
+   '--cache-from', 'gcr.io/$PROJECT_ID/api:latest',
    '-t', 
    'gcr.io/$PROJECT_ID/api:$TAG_NAME',
    '-t', 
