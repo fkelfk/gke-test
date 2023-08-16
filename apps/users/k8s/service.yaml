@@ -1,6 +1,8 @@
 kind: Service
 apiVersion: v1
 metadata:
+  labels:
+    run: users
   name: users
 spec:
   selector:

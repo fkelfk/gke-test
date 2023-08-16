@@ -21,7 +21,7 @@ steps:
   args: ['apply', '-f', 'apps/users/k8s/']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=prod'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=staging`'
 #step 4
 - name: 'gcr.io/cloud-builders/kubectl'
   args: [
@@ -33,7 +33,7 @@ steps:
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=prod'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=staging'
 # push images to Google Container Registry with tags
 images: [
    'gcr.io/$PROJECT_ID/users:$TAG_NAME',
