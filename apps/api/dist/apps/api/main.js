@@ -144,7 +144,7 @@ async function bootstrap() {
     const globalPrefix = 'api';
     app.setGlobalPrefix(globalPrefix);
     const port = process.env.PORT || 3000;
-    const USERS_SERVICE_URL = "http://users:3300";
+    const USERS_SERVICE_URL = "http://users.default.svc.cluster.local";
     app.use('/api/users', (0, http_proxy_middleware_1.createProxyMiddleware)({
         target: USERS_SERVICE_URL,
         changeOrigin: true,
