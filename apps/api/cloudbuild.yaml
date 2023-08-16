@@ -1,7 +1,5 @@
-Copy code
 substitutions:
   _DIRECTORY_PATH: 'apps/api'
-
 
 steps:
 #step 1
