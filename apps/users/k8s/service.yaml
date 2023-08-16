@@ -2,11 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   labels:
-    run: users
+    app: users
   name: users
 spec:
   selector:
-    run: users
+    app: users
   ports:
   - protocol: TCP
     port: 80

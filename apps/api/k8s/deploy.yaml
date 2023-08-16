@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: api
+    app: api
   name: api
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: api
+      app: api
   template:
     metadata:
       labels:
-        run: api
+        app: api
     spec:
       containers:
       - image: gcr.io/contrarains/api:latest

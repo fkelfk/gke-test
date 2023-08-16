@@ -2,11 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   labels:
-    run: api
+    app: api
   name: api-loadbalancer
 spec:
   selector:
-    run: api
+    app: api
   ports:
   - protocol: TCP
     port: 80
@@ -19,11 +19,11 @@ kind: Service
 apiVersion: v1
 metadata:
   labels:
-    run: api
+    app: api
   name: api-cluster
 spec:
   selector:
-    run: api
+    app: api
   ports:
   - protocol: TCP
     port: 80
