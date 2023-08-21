@@ -18,6 +18,7 @@ steps:
    'gcr.io/$PROJECT_ID/api:$TAG_NAME',
    '-t', 
    'gcr.io/$PROJECT_ID/api:latest',
+   '-f', './apps/api/Dockerfile',
    './apps/api/'
   ]
 #step 3
